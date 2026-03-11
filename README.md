@@ -63,6 +63,8 @@ Libraries
 
 # Project Structure
 
+
+```
 MINI ORDER
 │
 ├── server.js
@@ -94,6 +96,7 @@ MINI ORDER
 │
 │ └── images
 
+```
 # Application Flow
 
 1. User registers or logs in
