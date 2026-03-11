@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Payment</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<div class="navbar">
+
+<div class="logo">GAME STORE</div>
+
+<div class="nav-links">
+<a href="index.html">Products</a>
+<a href="cart.html">Cart</a>
+</div>
+
+</div>
+
+<div class="container center">
+
+<h2>Mock Payment Gateway</h2>
+
+<h3 id="amount"></h3>
+
+<button class="btn" onclick="payNow()">Pay Now</button>
+
+<button class="btn cancel" onclick="cancel()">Cancel</button>
+
+</div>
+
+<script>
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+let total = cart.reduce((sum,item)=> sum + item.price * item.quantity ,0);
+
+document.getElementById("amount").innerText = "Amount: ₹" + total;
+
+function payNow(){
+
+localStorage.removeItem("cart");
+
+window.location = "success.html";
+
+}
+
+function cancel(){
+
+window.location = "failed.html";
+
+}
+
+</script>
+
+</body>
+
+</html>
